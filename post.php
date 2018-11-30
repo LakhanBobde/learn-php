@@ -16,7 +16,4 @@ else
      echo"<br>login failed";
 }
 ?>
-<form action="index.php" method="post">
-<input type ='submit' value="Logout">
-</form>
 <a href="./index.php" > <button>Logout</button></a>
