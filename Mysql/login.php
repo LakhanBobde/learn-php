@@ -1,3 +1,35 @@
+<?php
+if(isset($_POST['submit'])){
+    $username=  $_POST['username'];
+    $password= $_POST['password'];
+
+    $connection= mysqli_connect('localhost','root','','working');
+
+     if($connection){
+         echo"WE are connected to database";
+     } else{
+         die("We are not connected to datbase");
+     }
+
+     $query= "INSERT INTO users (username,password) VALUES('$username','$password')";
+     $result= mysqli_query($connection, $query);
+     if(!$result){
+        die('Query mistake' .mysqli_error());
+     }
+     
+
+    /*if($username && $password){
+        echo "$username";
+        echo "$password";
+    } else{
+        echo"This field is not blank";
+    }*/
+
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +43,7 @@
 <body>
     <div class="container">
 
-        <div class="col-xs-6">
+        <div class="col-sm-6">
             <form action="login.php" method="post">
               <div class="form-group">
               <label for="username">Username</label>
@@ -21,6 +53,7 @@
               <label for="password">Password</label>
                    <input type="password" name="password" class="form-control">
               </div>
+              <input class="btn btn-primary" type="submit" name="submit" value="Submit">
             </form>
          </div>
     </div>
