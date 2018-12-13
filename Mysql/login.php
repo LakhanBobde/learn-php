@@ -8,13 +8,13 @@ if(isset($_POST['submit'])){
      if($connection){
          echo"WE are connected to database";
      } else{
-         die("We are not connected to datbase");
+         die("We are not connected to database");
      }
 
      $query= "INSERT INTO users (username,password) VALUES('$username','$password')";
      $result= mysqli_query($connection, $query);
      if(!$result){
-        die('Query mistake' .mysqli_error());
+        die('Query mistake' .mysqli_error($connection));
      }
      
 
