@@ -2,8 +2,6 @@
 
  $connection= mysqli_connect('localhost','root','','working');
 
-if($connection){
-    echo"WE are connected to database";
-} else{
+if(! $connection){
     die("We are not connected to database");
 }
