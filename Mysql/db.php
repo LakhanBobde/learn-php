@@ -5,3 +5,5 @@
 if(! $connection){
     die("We are not connected to database");
 }
+
+?>
